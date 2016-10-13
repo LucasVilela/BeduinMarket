@@ -13,26 +13,20 @@
     <%= stylesheet_link_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
+<%= render "layouts/header" %>
 
-  </div>
+<body>
+  <%= render "layouts/alerts" %>
 
-  <body>
-  <%= button_to 'Message Action', test_message_path, method: :post, :remote => true %>
-
-
-    <%= render "layouts/alerts" %>
-    <%= render "layouts/header" %>
-
-    <div id="main-content" class="row full-min-height">
+    <div class="row small-up-2 large-up-3">
       <%= yield %>
     </div>
 
-    <footer class="row">
-      <div class="large-12 columns">
-        <hr>
 
-      </div>
-    </footer>
-
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+       <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+       <script>
+         $(document).foundation();
+       </script>
   </body>
 </html>

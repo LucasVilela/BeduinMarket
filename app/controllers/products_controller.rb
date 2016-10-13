@@ -19,11 +19,11 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
 
-    if params[:file].present?
-      req = Cloudinary::Uploader.upload(params[:file])
-      product.image = req["public_id"]
-      product.save
-      redirect_to product_path(product)
+    if params[:product][:images].present?
+       params[:product][:images].each do |image|
+         req = Cloudinary::Uploader.upload(image)
+         product.images << req["public_id"]
+       end
     end
 
   end
@@ -61,15 +61,15 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     product = product.find(params[:id])
-    if params[:product][:images].present?
-      params[:product][:images].each do |image|
-        req = Cloudinary::Uploader.upload(image)
-        product.images << req["public_id"]
-      end
+  if params[:product][:images].present?
+    params[:product][:images].each do |image|
+      req = Cloudinary::Uploader.upload(image)
+      product.images << req["public_id"]
     end
-    product.update_attributes(product_params)
-    product.save
-    redirect_to(product_path(product))
+  end
+  product.update_attributes(product_params)
+  product.save
+  redirect_to(product_path(product))
   end
 
   # DELETE /products/1

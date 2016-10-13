@@ -1,12 +1,5 @@
 <header class="header">
 
-  <%if signed_in?%>
-    <%else%>
-      <li><%=link_to "Register", new_user_registration_path%></li>
-    <%end%>
-  <%if signed_in?%>
-      <p>You are logged as: <%=link_to current_user.email, edit_user_registration_path%></p>
-    <%end%>
   <h1 class="headline">Beduin Market  <small>BETA</small></h1>
   <ul class="header-subnav">
     <li><%=link_to "Exclusive Items", store_path%></li>

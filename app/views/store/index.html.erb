@@ -1,15 +1,21 @@
 <%= render "layouts/orbit"%>
 <h1>Fresh Picks </h1>
 
-<ul class="row small-up-2 large-up-4">
+
   <% @products.each do |product| %>
     <div class="column">
-      <%= image_tag(product.image_url, :class => "thumbnail") %>
+       <%= cl_image_tag(product.image.first, :class => "thumbnail") %>
+
       <h5><%= product.title  %></h5>
-      <p><%= truncate(product.description, length:200) %></p>
-      <p class="left price label product-label radius"> <%= number_to_currency(product.price) %></p>
-      <%= button_to 'I Want', wish_list_items_path(:product_id => product), :class => "button expanded" %>
-      <%= link_to 'See Product', product_path(product.id) %>
+        <p><%= truncate(product.description, length:200) %></p>
+        <p class="left price label product-label radius"> <%= number_to_currency(product.price) %></p>
+        <%= link_to 'See Product', product_path(product.id), :class => "left price label product-label radius" %>
+      <%if signed_in?%>
+      <%= button_to 'Let me know when is availabe', wish_list_items_path(:product_id => product), :class => "button expanded" %>
+      <% else %>
+      <%= button_to 'Login to Buy', wish_list_items_path(:product_id => product), :class => "button expanded" %>
+
+      <% end %>
+
     </div>
   <% end %>
-</ul>

@@ -16,4 +16,21 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(); 
+var product = $("#shop_product");
+
+	$(document).ready(function () {
+		productAnimation = TweenMax.to($(product, 10, {
+			left: "90vw",
+	    delay: 0.5,
+	    rotation: 3600,
+	    scaleX: 1.5,
+	    scaleY: 1.5,
+	    ease: Bounce.easeOut,
+	    top: Math.random() > 0.5 ? "90vh" : "0vh",
+	    yoyo: true,
+	    repeat: -1,
+		
+	});
+		productAnimation.play();
+});

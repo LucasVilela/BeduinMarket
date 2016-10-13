@@ -1,24 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<div class="row">
+      <div class="medium-6 columns">
+        <%= cl_image_tag @product.image.first, :class => 'thumbnail' %>
+            <div class="column">
+                <div class="row small-up-4">
+                <% @product.image.each do |i| %>
+                <div class="column">
+                    <%= cl_image_tag(i, :class => "thumbnail") %></li></a>
+              </div>
+                <% end %>
+            </div>
+          </div>
+      </div>
+      <div class="medium-6 large-5 columns">
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+        <h3><%= @product.title %></h3>
+        <p class"price"><strong>Price: </strong><%= @product.price %></p>
+        <p><%= @product.description %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+        <%if signed_in?%>
+            <div class="button .small.sucess.radius">
+                <script             src="https://checkout.stripe.com/checkout.js"                      class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Buy the product"
+                data-amount=<%= @product.price %>
+                data-locale="auto">
+                </script>
+            </div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+          <%= button_to 'Message me when is availabe', wish_list_items_path(@product_id), :class => "button expanded" %>
+          <% else %>
+          <%= button_to 'Login to add ', wish_list_items_path(:product_id => product), :class => "button expanded" %>
+          <% end %>
+
+        <div class="small secondary expanded button-group">
+            <a class="button">Facebook</a>
+            <a class="button">Twitter</a>
+            <a class="button">Text Message</a>
+          </div>
+        </div>
+    </div>
