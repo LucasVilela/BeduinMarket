@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dgj0ayasm
+  api_key: '242577246753356'
+  api_secret: Eok8KWRudKuzx9NrKeCGDFkyAIk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dgj0ayasm
+  api_key: '242577246753356'
+  api_secret: Eok8KWRudKuzx9NrKeCGDFkyAIk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dgj0ayasm
+  api_key: '242577246753356'
+  api_secret: Eok8KWRudKuzx9NrKeCGDFkyAIk
+  enhance_image_tag: true
+  static_image_support: false

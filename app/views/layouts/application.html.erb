@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "The Beduin Market" %></title>
+    <link rel="shortcut icon" href="<%=asset_path("logo.png")%>" >
+
+    <%= javascript_include_tag "application" %>
+    <%= include_gon %>
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  </div>
+
+  <body>
+  <%= button_to 'Message Action', test_message_path, method: :post, :remote => true %>
+
+
+    <%= render "layouts/alerts" %>
+    <%= render "layouts/header" %>
+
+    <div id="main-content" class="row full-min-height">
+      <%= yield %>
+    </div>
+
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
