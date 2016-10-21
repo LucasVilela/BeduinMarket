@@ -1,28 +1,28 @@
 == README
+#Beduin Market
+##What is it? 
+Is an online store create in rails, and sends you a SMS when the product became availave. 
+This project is part of a Immersive Web Development Course forom General Assembly Sydney 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Testing:
+user: jack@ga.co
+password:chicken
+
+* Gems used 
+gem 'stripe' : Used for payments 
+gem 'cloudinary' :Store the images 
+gem 'twilio-ruby' :send the sms messages 
+gem 'foundation-rails' : The CSS framework 
+gem 'devise': User managment 
 
 * Ruby version
+v 4.2
 
-* System dependencies
+* Models 
+- User 
+- Order 
+- Produtcs 
+- Wish List 
+- Wish List Items 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
