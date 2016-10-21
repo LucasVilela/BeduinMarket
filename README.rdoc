@@ -1,6 +1,6 @@
 == README
-#Beduin Market
-##What is it? 
+=Beduin Market
+==What is it? 
 Is an online store create in rails, and sends you a SMS when the product became availave. 
 This project is part of a Immersive Web Development Course forom General Assembly Sydney 
 
