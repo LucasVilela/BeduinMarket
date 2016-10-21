@@ -1,5 +1,5 @@
-== README
-=Beduin Market
+# README
+##Beduin Market
 ==What is it? 
 Is an online store create in rails, and sends you a SMS when the product became availave. 
 This project is part of a Immersive Web Development Course forom General Assembly Sydney 
@@ -10,11 +10,11 @@ user: jack@ga.co
 password:chicken
 
 * Gems used 
-gem 'stripe' : Used for payments 
-gem 'cloudinary' :Store the images 
-gem 'twilio-ruby' :send the sms messages 
-gem 'foundation-rails' : The CSS framework 
-gem 'devise': User managment 
+1.gem 'stripe' : Used for payments 
+2.gem 'cloudinary' :Store the images 
+3.gem 'twilio-ruby' :send the sms messages 
+4.gem 'foundation-rails' : The CSS framework 
+5.gem 'devise': User managment 
 
 * Ruby version
 v 4.2
